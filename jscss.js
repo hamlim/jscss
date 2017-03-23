@@ -11,7 +11,7 @@ const style = (() => {
       str.split(/\n/).filter(el => el).map((el, i, arr) => {
         if (isSelector(el))
           return i > 0 ? "}" + el + "{" : el + "{";
-        return el.replace(/\b\s/, ":") + (arr[i+1] ? ";" : "}");
+        return el.replace(/\b:\s/, ": ") + (arr[i+1] ? ";" : "}");
       }).join("");
   })();
   const insertStyles = str =>
